@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define endl "\n"
+#define ll unsigned long long int
+#define ui unsigned int
+#define fastIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define pi acos(-1.0)
+
+void solve()
+{
+    int n;
+    cin >> n;
+    while(n--)
+    {
+        int n;
+        cin >> n;
+        string x, y;
+        cin >> x >> y;
+        int xr[n], yr[n];
+        for(int i=0; i<n; i++)
+        {
+            xr[i]=0; yr[i]=0;
+        }
+        for(int i=0; i<n; i++)
+        {
+            if(x[i]=='R') xr[i]=1;
+            if(y[i]=='R') yr[i]=1;
+        }
+        
+        bool check = true;
+        for(int i=0; i<n; i++)
+        {
+            if(xr[i]!=yr[i])
+            {
+                check=false;
+                break;
+            }
+        }
+        if(check) cout << "YES" << endl;
+        else cout << "NO" << endl;
+    }
+    
+}
+
+int main()
+{
+//     #ifndef ONLINE_JUDGE
+//     freopen("input.txt", "r", stdin);
+//     freopen("output.txt", "w", stdout);
+//     #endif
+
+    fastIO;
+    solve();
+    return 0;
+}
